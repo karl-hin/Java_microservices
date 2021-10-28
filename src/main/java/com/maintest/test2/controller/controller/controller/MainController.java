@@ -22,7 +22,7 @@ public class MainController {
     }
 
     //api/Car/{id}
-    @GetMapping(value = "api/Car/{id}")
+    @GetMapping(value = "api/car/{id}")
     public Car showACar(@PathVariable int id) {
 
         return carDao.findById(id);
@@ -36,7 +36,7 @@ public class MainController {
     }
 
     //api/Car/{id}
-    @PutMapping("api/Car/{id}")
+    @PutMapping("api/car/{id}")
     public void updateCar(@PathVariable int id, @RequestBody Car carDetail) {
         Car car = carDao.findById(id);
         car.setMarque(carDetail.getMarque());
@@ -45,7 +45,7 @@ public class MainController {
     }
 
     //
-    @DeleteMapping("api/Car/{id}")
+    @DeleteMapping("api/car/{id}")
     public void deleteCar(@PathVariable int id) {
         Car car = carDao.findById(id);
         carDao.deleteById(car);
