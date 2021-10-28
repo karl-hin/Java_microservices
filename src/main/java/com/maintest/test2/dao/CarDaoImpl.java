@@ -54,7 +54,8 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
-    public Car deleteById(Car id) {
+    public Car deleteById(Car car) {
+        cars.remove(car);
         return null;
     }
 
