@@ -3,7 +3,6 @@ package com.maintest.test2.controller.controller.controller;
 import com.maintest.test2.dao.CarDao;
 import com.maintest.test2.model.Car;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,13 +37,11 @@ public class MainController {
 
     //api/Car/{id}
     @PutMapping("api/Car/{id}")
-    public ResponseEntity<Car> updateCar(@PathVariable int id, @RequestBody Car carDetail) {
+    public void updateCar(@PathVariable int id, @RequestBody Car carDetail) {
         Car car = carDao.findById(id);
         car.setMarque(carDetail.getMarque());
         car.setType(carDetail.getType());
         car.setColor(carDetail.getColor());
-        carDao.save(car);
-        return ResponseEntity.ok().body(car);
     }
 
     //

@@ -44,7 +44,6 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public Car save(Car car) {
-        cars.add(car);
         return null;
     }
 
