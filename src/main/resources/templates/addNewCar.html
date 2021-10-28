@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ajouter une voiture</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+<h1>Créer une voiture</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form th:action="@{/carsList/addNewCar}"
+                  th:object="${carForm}" method="POST">
+                Id du véhicule:
+                <input type="text" th:field="*{id}"/>
+                <br/>
+                Marque du véhicule:
+                <input type="text" th:field="*{marque}"/>
+                <br/>
+                Type du véhicule:
+                <input type="text" th:field="*{type}"/>
+                <br/>
+                Couleur du véhicule:
+                <input type="text" th:field="*{color}"/>
+                <br/>
+                <input type="submit" value="Create"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

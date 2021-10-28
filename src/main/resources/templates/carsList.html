@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>liste des voitures</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+<h1>Liste des voitures</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div>
+                <a th:href="@{/addNewCar}">Ajouter une voiture</a>
+                <table class="table">
+                    <tr>
+                        <th scope="col">Marque</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Couleur</th>
+                    </tr>
+                    <tr th:each="car : ${cars}">
+                        <td th:utext="${car.marque}">...</td>
+                        <td th:utext="${car.type}">...</td>
+                        <td th:utext="${car.color}">...</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
