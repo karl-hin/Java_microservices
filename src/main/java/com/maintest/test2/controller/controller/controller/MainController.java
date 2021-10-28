@@ -31,7 +31,7 @@ public class MainController {
 
     //api/carsList/addNewCar
     @PostMapping("api/carsList/addNewCar")
-    public Car addNewCarBis(Car car) {
+    public Car addNewCarBis(@RequestBody Car car) {
 
         return carDao.addNewCarBis(car);
     }
